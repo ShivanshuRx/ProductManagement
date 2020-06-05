@@ -1,0 +1,41 @@
+<p>add-customer works!</p>
+<form [formGroup]="addCustomerFormGroup">
+    <div class="container">
+
+        <div class="col-md-6 offset-md-3">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Customer Name</label>
+                    <input type="text" class="form-control" formControlName="customerName" placeholder="First Name"
+                        required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Customer Email</label>
+                    <input type="email" class="form-control" formControlName="customerEmail" placeholder="Last Name"
+                        required>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label>Mobile Number</label>
+                    <input type="text" class="form-control" formControlName="mobileNumber" placeholder="Mobile Number"
+                        required>
+
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Cusomer Address</label>
+                    <input type="text" class="form-control" formControlName="customerAddress" placeholder="Email"
+                        required>
+                </div>
+ <div class="form-group col-md-12">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="customerPassword" placeholder="Password" required>
+      </div>              
+ </div>
+
+            <button [disabled]="!addCustomerFormGroup.valid" class="btn btn-primary btn-block" (click)="onRegister()" >Register</button>
+
+        </div>
+    </div>
+</form>

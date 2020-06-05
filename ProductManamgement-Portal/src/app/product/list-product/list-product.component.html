@@ -1,0 +1,25 @@
+<div>
+  <button class="btn btn-primary" style="float: right;" [routerLink]="['/addProduct']">Add Product</button>
+</div>
+<table class="table table-hover">
+    <thead>      
+      <tr>
+        <th scope="col">Product Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Brand</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of result index as i"> 
+       <th scope="row">{{r.productId}}</th>
+        <td>{{r.productName}}</td>
+        <td>{{r.productBrand}}</td>
+        <td>{{r.productPrice}}</td>
+        <td><a [routerLink]="['/editProduct',r.productId,r.productName,r.productBrand,r.productPrice]"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        <td><button (click)="delete(r.productId)" ><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+      </tr>
+    </tbody>
+  </table>

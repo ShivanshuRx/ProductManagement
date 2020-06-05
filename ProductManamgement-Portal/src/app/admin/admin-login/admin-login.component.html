@@ -1,0 +1,18 @@
+<h2>Admin Login</h2>
+<form [formGroup]="adminLoginFormGroup">
+    <div class="container">
+     
+   <div class="col-md-6 offset-md-3">
+   <div class="form-group">
+     <label>Email </label>
+     <input type="email" class="form-control" formControlName="adminEmail"  placeholder="Enter email" required>
+     
+   </div>
+   <div class="form-group">
+     <label>Password</label>
+     <input type="password" class="form-control" formControlName="adminPassword" placeholder="Password" required>
+   </div>
+   
+   <button [disabled]="!adminLoginFormGroup.valid" (click)="isLogin()" class="btn btn-primary btn-block" >Login</button>
+   </div></div>
+ </form>

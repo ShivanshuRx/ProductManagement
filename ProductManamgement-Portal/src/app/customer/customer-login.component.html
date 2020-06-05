@@ -1,0 +1,21 @@
+<h2>Customer Login</h2>
+<form [formGroup]="customerLoginFormGroup">
+    <div class="container">
+     
+   <div class="col-md-6 offset-md-3">
+   <div class="form-group">
+     <label>Email </label>
+     <input type="email" class="form-control" formControlName="customerEmail"  placeholder="Enter email" required>
+     
+   </div>
+   <div class="form-group">
+     <label>Password</label>
+     <input type="password" class="form-control" formControlName="customerPassword" placeholder="Password" required>
+   </div>
+   
+   <button [disabled]="!customerLoginFormGroup.valid" (click)="isLogin()" class="btn btn-primary btn-block" >Login</button>
+   <span style="margin: 100px;"> New User Registration<a [routerLink]="['/addCustomer']"><b>>></b>Click Here<b><<</b> </a></span>
+   </div>
+   
+  </div>
+ </form>

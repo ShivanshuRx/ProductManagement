@@ -1,0 +1,28 @@
+<p>add-order works!</p>
+<p>add-customer works!</p>
+<form [formGroup]="addOrderFormGroup">
+    <div class="container">
+        <div class="col-md-6 offset-md-3">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Cart Id</label>
+                    <input type="text" class="form-control" formControlName="cartId" placeholder="First Name" required disabled>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Order Date</label>
+                    <input type="date"  [ngModel] ="dt | date:'yyyy-MM-dd'"  (ngModelChange)="dt = $event" formControlName="orderDate" disabled>{{dt| date:'dd-MM-yyyy'}}
+                    
+                    <!-- <input type="text" class="form-control" formControlName="orderDate" placeholder="Last Name" required (event) = "onEvent()"> -->
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Ship Date</label>
+                    <input type="date"  [ngModel] ="dt2 | date:'yyyy-MM-dd'"  (ngModelChange)="dt2 = $event" formControlName="shipDate" disabled>{{dt2| date:'dd-MM-yyyy'}}
+                    
+                    <!-- <input type="date" [ngModel] ="dt1 | date:'yyyy-MM-dd'" (ngModelChange)="dt1 = $event" value="datee | date:'yyyy-MM-dd'" disabled> -->
+                    <!-- <input type="text" class="form-control" formControlName="shipDate" placeholder="Mobile Number" required> -->
+                </div>
+            </div>
+            <button [disabled]="!addOrderFormGroup.valid" class="btn btn-primary btn-block" (click)="onPlaceOrder()">Place Order</button>
+        </div>
+    </div>
+</form>
